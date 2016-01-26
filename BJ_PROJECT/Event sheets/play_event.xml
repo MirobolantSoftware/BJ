@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>play_event</name>
     <events>
+        <variable constant="0" name="Variable1" sid="8396821334552256" static="0" type="number">0</variable>
         <variable constant="0" name="leaves_to_gather" sid="4124971492216877" static="0" type="number">20</variable>
         <variable constant="0" name="extra_leaves" sid="6199418136903446" static="0" type="number">10</variable>
         <variable constant="0" name="wind_frenquency" sid="5313750985314079" static="0" type="number">1</variable>
@@ -827,5 +828,54 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="1780291525562009" title="INPUTS" />
+        <event-block sid="383479236082904">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3571014226592341" type="Keyboard">
+                    <param id="0" name="Key">81 (Q)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="4372106515516448" type="bob">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4046722844557789">
+            <conditions>
+                <condition id="2" name="Key is down" sid="2983704130845058" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="9803719954049148" type="bob">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="617247378752002">
+            <conditions>
+                <condition id="2" name="Key is down" sid="7293502813653313" type="Keyboard">
+                    <param id="0" name="Key">90 (Z)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="4925935447864703" type="bob">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8327547904359521">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3802229007302825" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="3832236102885289" type="bob">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
