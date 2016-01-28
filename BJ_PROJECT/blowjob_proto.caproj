@@ -67,7 +67,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2735749108307987" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.328" hotspotY="0.588">
                         <image-point name="shoot_point" x="0.944" y="0.568" />
                         <collision-poly>
                             <point x="0.284" y="0.376" />
@@ -302,7 +302,7 @@
             <animation-folder>
                 <animation framecount="4" loop="0" name="walk" pingpong="0" repeatcount="1" repeatto="0" sid="7920468797641941" speed="5">
                     <frame duration="1" hotspotX="0.96" hotspotY="0.504">
-                        <image-point name="hand" x="0.612" y="0.392" />
+                        <image-point name="hand" x="0.596" y="0.512" />
                         <collision-poly>
                             <point x="0.86" y="0.624" />
                             <point x="0.896" y="0.38" />
@@ -311,7 +311,7 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.944" hotspotY="0.536">
-                        <image-point name="hand" x="0.596" y="0.388" />
+                        <image-point name="hand" x="0.596" y="0.512" />
                         <collision-poly>
                             <point x="0.9" y="0.532" />
                             <point x="0.912" y="0.424" />
@@ -320,7 +320,7 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.984" hotspotY="0.516">
-                        <image-point name="hand" x="0.56" y="0.388" />
+                        <image-point name="hand" x="0.596" y="0.512" />
                         <collision-poly>
                             <point x="0.92" y="0.604" />
                             <point x="0.928" y="0.42" />
@@ -329,7 +329,7 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.964" hotspotY="0.512">
-                        <image-point name="hand" x="0.596" y="0.388" />
+                        <image-point name="hand" x="0.596" y="0.512" />
                         <collision-poly>
                             <point x="0.888" y="0.62" />
                             <point x="0.896" y="0.38" />
