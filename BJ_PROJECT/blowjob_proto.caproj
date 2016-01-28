@@ -60,6 +60,7 @@
                 <instance-variable name="blow_force" sid="6406801852032476" type="number" />
                 <instance-variable name="blow_angle" sid="4849163539811663" type="number" />
                 <instance-variable name="blow_strength" sid="8205476066910995" type="number" />
+                <instance-variable name="blow_range" sid="8938614216246031" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="LineOfSight" sid="7678758330005219">
@@ -293,7 +294,7 @@
         <object-type name="bob" sid="2896280601363576">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="fuel_level" sid="1028274039571079" type="number" />
+                <instance-variable name="direction" sid="9973290826266245" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="3851402765310586">
@@ -306,7 +307,8 @@
             <animation-folder>
                 <animation framecount="4" loop="0" name="walk" pingpong="0" repeatcount="1" repeatto="0" sid="7920468797641941" speed="5">
                     <frame duration="1" hotspotX="0.96" hotspotY="0.504">
-                        <image-point name="hand" x="0.596" y="0.512" />
+                        <image-point name="arm" x="0.596" y="0.512" />
+                        <image-point name="kick" x="0.956" y="0.38" />
                         <collision-poly>
                             <point x="0.86" y="0.624" />
                             <point x="0.896" y="0.38" />
@@ -314,8 +316,10 @@
                             <point x="0.972" y="0.676" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.944" hotspotY="0.536">
+                    <frame duration="1" hotspotX="0.96" hotspotY="0.504">
                         <image-point name="hand" x="0.596" y="0.512" />
+                        <image-point name="arm" x="0.596" y="0.512" />
+                        <image-point name="kick" x="0.964" y="0.488" />
                         <collision-poly>
                             <point x="0.9" y="0.532" />
                             <point x="0.912" y="0.424" />
@@ -323,8 +327,10 @@
                             <point x="0.976" y="0.588" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.984" hotspotY="0.516">
+                    <frame duration="1" hotspotX="0.96" hotspotY="0.504">
                         <image-point name="hand" x="0.596" y="0.512" />
+                        <image-point name="arm" x="0.596" y="0.512" />
+                        <image-point name="kick" x="0.96" y="0.492" />
                         <collision-poly>
                             <point x="0.92" y="0.604" />
                             <point x="0.928" y="0.42" />
@@ -332,13 +338,37 @@
                             <point x="1" y="0.652" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.964" hotspotY="0.512">
+                    <frame duration="1" hotspotX="0.96" hotspotY="0.504">
                         <image-point name="hand" x="0.596" y="0.512" />
+                        <image-point name="arm" x="0.596" y="0.512" />
+                        <image-point name="kick" x="0.96" y="0.388" />
                         <collision-poly>
                             <point x="0.888" y="0.62" />
                             <point x="0.896" y="0.38" />
                             <point x="0.972" y="0.3" />
                             <point x="1" y="0.684" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="kick" pingpong="0" repeatcount="1" repeatto="0" sid="4373542075843147" speed="5">
+                    <frame duration="1" hotspotX="0.96" hotspotY="0.504">
+                        <image-point name="arm" x="0.596" y="0.512" />
+                        <image-point name="kick" x="0.98" y="0.4" />
+                        <collision-poly>
+                            <point x="0.908" y="0.4" />
+                            <point x="0.988" y="0.344" />
+                            <point x="0.984" y="0.6" />
+                            <point x="0.892" y="0.544" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.96" hotspotY="0.504">
+                        <image-point name="arm" x="0.596" y="0.512" />
+                        <image-point name="kick" x="0.94" y="0.324" />
+                        <collision-poly>
+                            <point x="0.864" y="0.18" />
+                            <point x="1" y="0.132" />
+                            <point x="1" y="0.58" />
+                            <point x="0.876" y="0.576" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -502,7 +532,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="blow_force_bonus" sid="2264824281739026">
+        <object-type name="blow_range_bonus" sid="2264824281739026">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9179567980609251" speed="5">

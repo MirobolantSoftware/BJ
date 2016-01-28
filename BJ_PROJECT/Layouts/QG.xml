@@ -195,6 +195,7 @@
                         <blow_force>0</blow_force>
                         <blow_angle>100</blow_angle>
                         <blow_strength>200</blow_strength>
+                        <blow_range>0</blow_range>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LineOfSight">
@@ -229,7 +230,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <fuel_level>500</fuel_level>
+                        <direction>0</direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -678,7 +679,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="blow_force_bonus" uid="9">
+                <instance type="blow_range_bonus" uid="9">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>

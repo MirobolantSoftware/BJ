@@ -43,7 +43,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/wind_control/" />
         <folder expanded="1" path="animation-folder/cone_bonus/" />
         <folder expanded="1" path="animation-folder/speed_bonus/" />
-        <folder expanded="1" path="animation-folder/blow_force_bonus/" />
+        <folder expanded="1" path="animation-folder/blow_range_bonus/" />
         <folder expanded="1" path="animation-folder/bonus_spawn/" />
         <folder expanded="1" path="animation-folder/Xavier/" />
         <folder expanded="1" path="animation-folder/meteo_board/" />

@@ -8,7 +8,7 @@
         <height>480</height>
     </size>
     <margins>
-        <horizontal>100</horizontal>
+        <horizontal>200</horizontal>
         <vertical>100</vertical>
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
@@ -363,7 +363,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <fuel_level>100</fuel_level>
+                        <direction>0</direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -490,6 +490,7 @@
                         <blow_force>0</blow_force>
                         <blow_angle>100</blow_angle>
                         <blow_strength>200</blow_strength>
+                        <blow_range>0</blow_range>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LineOfSight">

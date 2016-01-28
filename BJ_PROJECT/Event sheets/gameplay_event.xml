@@ -14,8 +14,10 @@
         <variable constant="0" name="gathered_leaves" sid="901647731120211" static="0" type="number">0</variable>
         <variable constant="0" name="tree_max_leaves" sid="7990933118538347" static="0" type="number">10</variable>
         <variable constant="0" name="player_initial_strenght" sid="6934100579935003" static="0" type="number">200</variable>
-        <variable constant="0" name="player_initial_speed" sid="1436122149838553" static="0" type="number">200</variable>
+        <variable constant="0" name="player_initial_range" sid="23262295221212" static="0" type="number">100</variable>
+        <variable constant="0" name="player_initial_speed" sid="1436122149838553" static="0" type="number">150</variable>
         <variable constant="0" name="player_initial_cone" sid="1955214890695693" static="0" type="number">100</variable>
+        <variable constant="0" name="player_extra_range" sid="6620009760464626" static="0" type="number">0</variable>
         <variable constant="0" name="player_extra_speed" sid="9239303754659467" static="0" type="number">0</variable>
         <variable constant="0" name="player_extra_cone" sid="6051817210786957" static="0" type="number">0</variable>
         <variable constant="0" name="player_extra_strenght" sid="5156783865316722" static="0" type="number">0</variable>
@@ -62,6 +64,10 @@
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8777798327569803" type="machine">
+                            <param id="0" name="Instance variable">blow_range</param>
+                            <param id="1" name="Value">player_initial_range+player_extra_range</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -286,6 +292,10 @@
                                 <action id="8" name="Set flipped" sid="2123564145294537" type="bob">
                                     <param id="0" name="State">1</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="6492569444480323" type="bob">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="7793496137010374">
@@ -298,6 +308,10 @@
                                 </action>
                                 <action id="8" name="Set flipped" sid="8866198823030108" type="bob">
                                     <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="5548869825244945" type="bob">
+                                    <param id="0" name="Instance variable">direction</param>
+                                    <param id="1" name="Value">-1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -397,7 +411,7 @@
                                                     <param id="0" name="Variable">current_level</param>
                                                     <param id="1" name="Value">1</param>
                                                 </action>
-                                                <action id="0" name="Play" sid="1682667281983464" type="Audio">
+                                                <action disabled="1" id="0" name="Play" sid="1682667281983464" type="Audio">
                                                     <param id="0" name="Audio file">music_reverse</param>
                                                     <param id="2" name="Loop">1</param>
                                                     <param id="3" name="Volume">0</param>
@@ -590,6 +604,16 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block disabled="1" sid="963013786019552">
+                                    <conditions>
+                                        <condition behavior="8Direction" id="0" name="Is moving" sid="5070865521498769" type="bob" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-8" name="Scroll to object" sid="100409686196846" type="System">
+                                            <param id="0" name="Object">bob</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
@@ -680,7 +704,7 @@
                                 <condition id="-8" name="Compare two values" sid="194020633903703" type="System">
                                     <param id="0" name="First value">distance(leaf.X,leaf.Y,machine.X,machine.Y)</param>
                                     <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Second value">100</param>
+                                    <param id="2" name="Second value">machine.blow_range</param>
                                 </condition>
                                 <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="8495485504304103" type="machine">
                                     <param id="0" name="Object">leaf</param>
@@ -695,6 +719,63 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="380282824322333">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="584352451051892" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="3708539741276022" type="bob">
+                            <param id="0" name="Animation">&quot;kick&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="6262684244846051" type="bob">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9532669916253058">
+                    <conditions>
+                        <condition id="0" name="On click" sid="1141141215587748" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7611261753723794">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="3985630868542974" type="System">
+                                    <param id="0" name="Object">leaf</param>
+                                    <param id="1" name="Expression">distance(leaf.X,leaf.Y,bob.ImagePointX(2),bob.ImagePointY(2))</param>
+                                    <param id="2" name="Comparison">2</param>
+                                    <param id="3" name="Value">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Physics" id="5" name="Apply impulse at angle" sid="1928094929880406" type="leaf">
+                                    <param id="0" name="Impulse">0.5</param>
+                                    <param id="1" name="Angle">angle(bob.X,bob.Y,Mouse.X,Mouse.Y)</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9400780093386424">
+                    <conditions>
+                        <condition id="3" name="On button released" sid="4222639585719774" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6744557855441196" type="bob">
+                            <param id="0" name="Animation">&quot;walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="8211832936336397">
                     <conditions>
@@ -917,7 +998,7 @@
                             <param id="1" name="Value">player_extra_speed+40</param>
                         </action>
                         <action id="-9" name="Destroy" sid="1842317801999197" type="speed_bonus" />
-                        <action id="-9" name="Destroy" sid="1572961565055444" type="blow_force_bonus" />
+                        <action id="-9" name="Destroy" sid="1572961565055444" type="blow_range_bonus" />
                         <action id="-9" name="Destroy" sid="3211814007849927" type="cone_bonus" />
                         <action id="0" name="Play" sid="6726174448533691" type="Audio">
                             <param id="0" name="Audio file">speed_bonus</param>
@@ -945,7 +1026,7 @@
                             <param id="1" name="Value">player_extra_cone+30</param>
                         </action>
                         <action id="-9" name="Destroy" sid="9744222212164453" type="speed_bonus" />
-                        <action id="-9" name="Destroy" sid="3708183877279516" type="blow_force_bonus" />
+                        <action id="-9" name="Destroy" sid="3708183877279516" type="blow_range_bonus" />
                         <action id="-9" name="Destroy" sid="9756240078456841" type="cone_bonus" />
                         <action id="0" name="Play" sid="392507592564844" type="Audio">
                             <param id="0" name="Audio file">cone_bonus</param>
@@ -960,17 +1041,17 @@
                 </event-block>
                 <event-block sid="3033896935765497">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="8038958828737428" type="blow_force_bonus">
+                        <condition id="0" name="On collision with another object" sid="8038958828737428" type="blow_range_bonus">
                             <param id="0" name="Object">bob</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="1758445066767603" type="System">
-                            <param id="0" name="Variable">player_extra_strenght</param>
-                            <param id="1" name="Value">player_extra_strenght+30</param>
+                        <action id="-9" name="Set value" sid="7219430676312065" type="System">
+                            <param id="0" name="Variable">player_extra_range</param>
+                            <param id="1" name="Value">player_extra_range+30</param>
                         </action>
                         <action id="-9" name="Destroy" sid="8780109373022677" type="speed_bonus" />
-                        <action id="-9" name="Destroy" sid="1269882710216981" type="blow_force_bonus" />
+                        <action id="-9" name="Destroy" sid="1269882710216981" type="blow_range_bonus" />
                         <action id="-9" name="Destroy" sid="3319755382273153" type="cone_bonus" />
                         <action id="0" name="Play" sid="3511204936857865" type="Audio">
                             <param id="0" name="Audio file">force_bonus</param>
@@ -978,9 +1059,9 @@
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
-                        <action id="-10" name="Set value" sid="3831428563910417" type="machine">
+                        <action id="-10" name="Set value" sid="7559112738633994" type="machine">
                             <param id="0" name="Instance variable">blow_strength</param>
-                            <param id="1" name="Value">machine.blow_strength+player_extra_strenght</param>
+                            <param id="1" name="Value">player_initial_range+player_extra_range</param>
                         </action>
                     </actions>
                 </event-block>
