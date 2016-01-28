@@ -36,7 +36,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/bob/" />
         <folder expanded="1" path="animation-folder/shot_point/" />
         <folder expanded="1" path="animation-folder/shadow/" />
-        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/splash_screen_image/" />
         <folder expanded="1" path="animation-folder/tree/" />
         <folder expanded="1" path="animation-folder/area/" />
         <folder expanded="1" path="animation-folder/whirlwind/" />
@@ -46,10 +46,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/blow_force_bonus/" />
         <folder expanded="1" path="animation-folder/bonus_spawn/" />
         <folder expanded="1" path="animation-folder/Xavier/" />
-        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/meteo_board/" />
         <folder expanded="1" path="animation-folder/meteo_pictos/" />
-        <folder expanded="1" path="animation-folder/Sprite4/" />
-        <folder expanded="1" path="animation-folder/Sprite5/" />
+        <folder expanded="1" path="animation-folder/boss/" />
+        <folder expanded="1" path="animation-folder/door/" />
         <folder expanded="1" path="animation-folder/decoration/" />
         <folder expanded="1" path="animation-folder/scene/" />
     </folders-expanded>

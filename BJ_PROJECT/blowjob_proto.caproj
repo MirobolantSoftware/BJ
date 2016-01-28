@@ -366,7 +366,7 @@
         <object-type name="Button" sid="6932969553105024">
             <plugin id="Button" />
         </object-type>
-        <object-type name="Sprite" sid="6460203921513309">
+        <object-type name="splash_screen_image" sid="6460203921513309">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="976698688552053" speed="5">
@@ -549,7 +549,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite2" sid="6650074370009166">
+        <object-type name="meteo_board" sid="6650074370009166">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6905579347008794" speed="5">
@@ -567,7 +567,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite4" sid="773401708114485">
+        <object-type name="boss" sid="773401708114485">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9604050769639512" speed="5">
@@ -575,7 +575,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite5" sid="3434631421186276">
+        <object-type name="door" sid="3434631421186276">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5662173061663597" speed="5">
@@ -602,6 +602,9 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="Day" sid="2499992566723761">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />

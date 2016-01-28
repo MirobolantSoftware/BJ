@@ -77,6 +77,16 @@
                                 <action id="6" name="Stop" sid="3864042272746819" type="Audio">
                                     <param id="0" name="Tag">&quot;music&quot;</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="6412413459758073" type="System">
+                                    <param id="0" name="Variable">meteo</param>
+                                    <param id="1" name="Value">round(random(0,2))</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="2581906402015267" type="meteo_pictos">
+                                    <param id="0" name="Frame number">meteo</param>
+                                </action>
+                                <action id="0" name="Set text" sid="1003408817631016" type="Day">
+                                    <param id="0" name="Text">&quot;DAY : &quot;&amp;day</param>
+                                </action>
                             </actions>
                         </event-block>
                         <comment>STREET_LAYOUT</comment>
@@ -242,9 +252,6 @@
                             <param id="0" name="X">machine.X+30</param>
                             <param id="1" name="Y">machine.Y</param>
                         </action>
-                        <action id="0" name="Set text" sid="58551085399506" type="tic_tac">
-                            <param id="0" name="Text">&quot;time left : &quot;&amp;round(gathering_time-bob.Timer.CurrentTime(&quot;gathering_time&quot;))</param>
-                        </action>
                         <action id="-4" name="Set position to another object" sid="1031223577205175" type="machine">
                             <param id="0" name="Object">bob</param>
                             <param id="1" name="Image point (optional)">1</param>
@@ -333,7 +340,39 @@
                                     <param id="2" name="Second value">&quot;QG&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="5" name="Set frame" sid="3533365171985441" type="door">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="9416860710143214">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="8059612582144222" type="door">
+                                            <param id="0" name="Object">bob</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="6483955950947247" type="door">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="6740910262090233">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="8230850634150116" type="Keyboard">
+                                                    <param id="0" name="Key">32 (Espace)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Go to layout" sid="5360752409310413" type="System">
+                                                    <param id="0" name="Layout">street</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <comment>STREET_LAYOUT</comment>
                         <event-block sid="4793328039277487">
@@ -360,6 +399,12 @@
                                 </action>
                                 <action id="0" name="Set text" sid="1833379975841073" type="leaves">
                                     <param id="0" name="Text">&quot;leaves to left gather : &quot;&amp;leaves_to_gather-area.gathered_leaves</param>
+                                </action>
+                                <action id="0" name="Set text" sid="58551085399506" type="tic_tac">
+                                    <param id="0" name="Text">&quot;time left : &quot;&amp;round(gathering_time-bob.Timer.CurrentTime(&quot;gathering_time&quot;))</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="6229151711287956" type="leaves">
+                                    <param id="0" name="Color">rgb(100,255,0)</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -477,6 +522,34 @@
                                         <action id="-13" name="Set boolean" sid="9759000350780726" type="leaf">
                                             <param id="0" name="Instance variable">flying</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3981588483973215">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="6100446613112972" type="System">
+                                            <param id="0" name="First value">gathering_time-bob.Timer.CurrentTime(&quot;gathering_time&quot;)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="3423429440811794" type="leaves">
+                                            <param id="0" name="Color">rgb(255, 0, 0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5393366436694125">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="1492183868833353" type="System">
+                                            <param id="0" name="First value">gathering_time-bob.Timer.CurrentTime(&quot;gathering_time&quot;)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">gathering_time/2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="1537706683029665" type="leaves">
+                                            <param id="0" name="Color">rgb(255, 100, 0)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -886,6 +959,10 @@
                                 <action id="-2" name="Go to layout" sid="9063931723662745" type="System">
                                     <param id="0" name="Layout">QG</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="6076703897408967" type="System">
+                                    <param id="0" name="Variable">day</param>
+                                    <param id="1" name="Value">day+1</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -894,19 +971,19 @@
         </event-group>
         <event-group description="" sid="3261399489011892" title="DOORS">
             <sub-events>
-                <event-block sid="8337920450623871">
+                <event-block disabled="1" sid="8337920450623871">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="8200283680848046" type="Sprite5">
+                        <condition id="0" name="On collision with another object" sid="8200283680848046" type="door">
                             <param id="0" name="Object">bob</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="5" name="Set frame" sid="3244011441207857" type="Sprite5">
+                        <action id="5" name="Set frame" sid="3244011441207857" type="door">
                             <param id="0" name="Frame number">1</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="5129952125001691">
+                        <event-block disabled="1" sid="5129952125001691">
                             <conditions>
                                 <condition id="2" name="Key is down" sid="7892240280396324" type="Keyboard">
                                     <param id="0" name="Key">32 (Espace)</param>

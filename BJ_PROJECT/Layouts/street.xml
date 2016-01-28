@@ -180,7 +180,7 @@
                 </instance>
                 <instance type="leaves" uid="5">
                     <properties>
-                        <text>Text</text>
+                        <text>Leaves to gather</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>0,0,0</color>
@@ -284,7 +284,7 @@
                 </instance>
                 <instance type="tic_tac" uid="10">
                     <properties>
-                        <text>Text</text>
+                        <text>time left</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>0,0,0</color>
@@ -311,7 +311,7 @@
                 </instance>
                 <instance type="Level" uid="6">
                     <properties>
-                        <text>Text</text>
+                        <text>Level</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>0,0,0</color>
@@ -545,31 +545,6 @@
                         <z>0</z>
                         <width>67</width>
                         <height>80</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="scene" uid="30">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <layout_number>1</layout_number>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>441.983642578</x>
-                        <y>-60.723999023</y>
-                        <z>0</z>
-                        <width>109.503967285</width>
-                        <height>101.239562988</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
