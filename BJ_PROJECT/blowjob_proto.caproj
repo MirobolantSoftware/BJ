@@ -549,14 +549,69 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sprite2" sid="6650074370009166">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6905579347008794" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="meteo_pictos" sid="409094552597323">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7735691190486484" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="773401708114485">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9604050769639512" speed="5">
+                    <frame duration="1" hotspotX="0.501229" hotspotY="0.465426" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite5" sid="3434631421186276">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5662173061663597" speed="5">
+                    <frame duration="1" hotspotX="0.424" hotspotY="0.424" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="decoration" sid="8613400271676611">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4038134975221749" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="scene" sid="9174334386724681">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="layout_number" sid="8298021569149647" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3547422367487155" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>menu.xml</layout>
-        <layout>play.xml</layout>
+        <layout>street.xml</layout>
+        <layout>QG.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>play_event.xml</event-sheet>
+        <event-sheet>gameplay_event.xml</event-sheet>
         <event-sheet>menu_events.xml</event-sheet>
     </event-folder>
     <global-instances>
