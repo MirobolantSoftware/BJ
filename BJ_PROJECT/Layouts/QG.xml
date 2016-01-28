@@ -105,8 +105,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>682</x>
-                        <y>68</y>
+                        <x>722.570861816</x>
+                        <y>81.523460388</y>
                         <z>0</z>
                         <width>106</width>
                         <height>112</height>
@@ -208,8 +208,8 @@
                         <width>67</width>
                         <height>80</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.328000009</hotspotX>
+                        <hotspotY>0.588</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -221,6 +221,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <fuel_level>500</fuel_level>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
                             <properties>
@@ -312,6 +315,208 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fuel" uid="27">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <contained_fuel>100</contained_fuel>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>128.531890869</x>
+                        <y>336.060180664</y>
+                        <z>0</z>
+                        <width>21.023696899</width>
+                        <height>23.508911133</height>
+                        <depth>0</depth>
+                        <hotspotX>0.576158941</hotspotX>
+                        <hotspotY>0.447204977</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fuel" uid="30">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <contained_fuel>100</contained_fuel>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>201.91784668</x>
+                        <y>358.47644043</y>
+                        <z>0</z>
+                        <width>21.023696899</width>
+                        <height>23.508911133</height>
+                        <depth>0</depth>
+                        <hotspotX>0.576158941</hotspotX>
+                        <hotspotY>0.447204977</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fuel" uid="32">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <contained_fuel>100</contained_fuel>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>157.587554932</x>
+                        <y>392.286468506</y>
+                        <z>0</z>
+                        <width>21.023696899</width>
+                        <height>23.508911133</height>
+                        <depth>0</depth>
+                        <hotspotX>0.576158941</hotspotX>
+                        <hotspotY>0.447204977</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fuel" uid="34">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <contained_fuel>100</contained_fuel>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>238.731628418</x>
+                        <y>318.657196045</y>
+                        <z>0</z>
+                        <width>21.023696899</width>
+                        <height>23.508911133</height>
+                        <depth>0</depth>
+                        <hotspotX>0.576158941</hotspotX>
+                        <hotspotY>0.447204977</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fuel" uid="35">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <contained_fuel>100</contained_fuel>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>273.290466309</x>
+                        <y>375.756988525</y>
+                        <z>0</z>
+                        <width>21.023696899</width>
+                        <height>23.508911133</height>
+                        <depth>0</depth>
+                        <hotspotX>0.576158941</hotspotX>
+                        <hotspotY>0.447204977</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fuel_left" uid="36">
+                    <properties>
+                        <text>fuel left</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>0,51,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>643.690185547</x>
+                        <y>436.613952637</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fuel" uid="37">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <contained_fuel>100</contained_fuel>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>299.742706299</x>
+                        <y>307.387451172</y>
+                        <z>0</z>
+                        <width>21.023696899</width>
+                        <height>23.508911133</height>
+                        <depth>0</depth>
+                        <hotspotX>0.576158941</hotspotX>
+                        <hotspotY>0.447204977</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="fuel" uid="38">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <contained_fuel>100</contained_fuel>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>325.287414551</x>
+                        <y>356.223083496</y>
+                        <z>0</z>
+                        <width>21.023696899</width>
+                        <height>23.508911133</height>
+                        <depth>0</depth>
+                        <hotspotX>0.576158941</hotspotX>
+                        <hotspotY>0.447204977</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

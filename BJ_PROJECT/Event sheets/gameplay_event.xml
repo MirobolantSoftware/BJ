@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>gameplay_event</name>
     <events>
+        <variable constant="0" name="fuel_level" sid="293168689340262" static="0" type="number">0</variable>
         <variable constant="0" name="leaves_to_gather" sid="4124971492216877" static="0" type="number">20</variable>
         <variable constant="0" name="extra_leaves" sid="6199418136903446" static="0" type="number">10</variable>
         <variable constant="0" name="wind_frenquency" sid="5313750985314079" static="0" type="number">1</variable>
@@ -275,6 +276,9 @@
                         <action id="-4" name="Set position to another object" sid="1210045930146287" type="Particles">
                             <param id="0" name="Object">machine</param>
                             <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="697124753055126" type="fuel_left">
+                            <param id="0" name="Text">&quot;fuel left = &quot;&amp;fuel_level</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -571,79 +575,118 @@
                         <condition id="2" name="Mouse button is down" sid="6978831970628208" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="2597302174419889" type="machine">
-                            <param id="0" name="Instance variable">blow_force</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">machine.blow_strength</param>
-                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="-11" name="Add to" sid="8120586517836354" type="machine">
-                            <param id="0" name="Instance variable">blow_force</param>
-                            <param id="1" name="Value">10</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="8053575168861156" type="Particles">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action id="2" name="Set spray cone" sid="9235256760493999" type="Particles">
-                            <param id="0" name="Spray cone">machine.LineOfSight.ConeOfView</param>
-                        </action>
-                        <action id="4" name="Set speed" sid="6100478001532725" type="Particles">
-                            <param id="0" name="Speed">machine.blow_force</param>
-                        </action>
-                        <action id="1" name="Set rate" sid="1520169138353419" type="Particles">
-                            <param id="0" name="Rate">machine.blow_force/2</param>
-                        </action>
-                        <action id="2" name="Set muted" sid="4343680768224238" type="Audio">
-                            <param id="0" name="Tag">&quot;blow&quot;</param>
-                            <param id="1" name="State">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6011988293582903">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="683665753902702" type="System">
+                                    <param id="0" name="Variable">fuel_level</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="7605281729959136" type="System">
+                                    <param id="0" name="Variable">fuel_level</param>
+                                    <param id="1" name="Value">fuel_level-1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="8929016607753276">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2597302174419889" type="machine">
+                                            <param id="0" name="Instance variable">blow_force</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">machine.blow_strength</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="8120586517836354" type="machine">
+                                            <param id="0" name="Instance variable">blow_force</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                        <action id="0" name="Set spraying" sid="8053575168861156" type="Particles">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="2" name="Set spray cone" sid="9235256760493999" type="Particles">
+                                            <param id="0" name="Spray cone">machine.LineOfSight.ConeOfView</param>
+                                        </action>
+                                        <action id="4" name="Set speed" sid="6100478001532725" type="Particles">
+                                            <param id="0" name="Speed">machine.blow_force</param>
+                                        </action>
+                                        <action id="1" name="Set rate" sid="1520169138353419" type="Particles">
+                                            <param id="0" name="Rate">machine.blow_force/2</param>
+                                        </action>
+                                        <action id="2" name="Set muted" sid="4343680768224238" type="Audio">
+                                            <param id="0" name="Tag">&quot;blow&quot;</param>
+                                            <param id="1" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="4869053549728945">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1859631060522512" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set muted" sid="8005960494654198" type="Audio">
+                                    <param id="0" name="Tag">&quot;blow&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="0" name="Set spraying" sid="5113732849555986" type="Particles">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="6446321508928017" type="machine">
+                                    <param id="0" name="Instance variable">blow_force</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3572605536761593">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="3470752194341916" type="System">
+                                    <param id="0" name="Object">leaf</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="194020633903703" type="System">
+                                    <param id="0" name="First value">distance(leaf.X,leaf.Y,machine.X,machine.Y)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">100</param>
+                                </condition>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="8495485504304103" type="machine">
+                                    <param id="0" name="Object">leaf</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Physics" id="2" name="Apply force at angle" sid="5804686584118997" type="leaf">
+                                    <param id="0" name="Force">machine.blow_force/distance(leaf.X,leaf.Y,shot_point.X,shot_point.Y)</param>
+                                    <param id="1" name="Angle">angle(shot_point.X,shot_point.Y,Mouse.X,Mouse.Y)</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="914321664421872">
+                <event-block sid="8211832936336397">
                     <conditions>
-                        <condition id="3" name="On button released" sid="3421335050504567" type="Mouse">
+                        <condition id="3" name="On button released" sid="5213281927365378" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="806888285437898" type="machine">
-                            <param id="0" name="Instance variable">blow_force</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="5859671607877343" type="Particles">
-                            <param id="0" name="State">0</param>
-                        </action>
+                        <action disabled="1" id="-25" name="Move to bottom" sid="4199603271093007" type="leaf" />
                         <action id="2" name="Set muted" sid="6046429288541884" type="Audio">
                             <param id="0" name="Tag">&quot;blow&quot;</param>
                             <param id="1" name="State">0</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="8211832936336397">
-                    <conditions>
-                        <condition id="2" name="Mouse button is down" sid="5213281927365378" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                        </condition>
-                        <condition id="-11" name="For Each" sid="3470752194341916" type="System">
-                            <param id="0" name="Object">leaf</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" sid="194020633903703" type="System">
-                            <param id="0" name="First value">distance(leaf.X,leaf.Y,machine.X,machine.Y)</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Second value">100</param>
-                        </condition>
-                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="8495485504304103" type="machine">
-                            <param id="0" name="Object">leaf</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Physics" id="2" name="Apply force at angle" sid="5804686584118997" type="leaf">
-                            <param id="0" name="Force">machine.blow_force/distance(leaf.X,leaf.Y,shot_point.X,shot_point.Y)</param>
-                            <param id="1" name="Angle">angle(shot_point.X,shot_point.Y,Mouse.X,Mouse.Y)</param>
-                            <param id="2" name="Image point">0</param>
+                        <action id="0" name="Set spraying" sid="5859671607877343" type="Particles">
+                            <param id="0" name="State">0</param>
                         </action>
-                        <action disabled="1" id="-25" name="Move to bottom" sid="4199603271093007" type="leaf" />
+                        <action id="-10" name="Set value" sid="806888285437898" type="machine">
+                            <param id="0" name="Instance variable">blow_force</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -913,6 +956,26 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="7265563302117326">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="9548867250842442" type="bob">
+                            <param id="0" name="Object">fuel</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8278257990381993" type="System">
+                            <param id="0" name="Variable">fuel_level</param>
+                            <param id="1" name="Value">fuel_level+fuel.contained_fuel</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="3531563199830758" type="fuel" />
+                        <action id="0" name="Play" sid="4515847227257623" type="Audio">
+                            <param id="0" name="Audio file">fuel_bonus</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="1929029071192703" title="WIN-LOOSE">
@@ -993,6 +1056,12 @@
                             <actions>
                                 <action id="-2" name="Go to layout" sid="8460479652673657" type="System">
                                     <param id="0" name="Layout">menu</param>
+                                </action>
+                                <action id="0" name="Play" sid="171621328266314" type="Audio">
+                                    <param id="0" name="Audio file">Hit_Hurt</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

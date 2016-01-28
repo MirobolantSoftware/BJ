@@ -291,6 +291,9 @@
         </object-type>
         <object-type name="bob" sid="2896280601363576">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="fuel_level" sid="1028274039571079" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="3851402765310586">
                     <behavior id="EightDir" />
@@ -472,12 +475,12 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5962471378670309" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.507463" hotspotY="0.492386">
                         <collision-poly>
-                            <point x="0.16" y="0.164" />
-                            <point x="0.844" y="0.128" />
-                            <point x="0.904" y="0.868" />
-                            <point x="0.136" y="0.832" />
+                            <point x="0.0845771" y="0.0659898" />
+                            <point x="0.935323" y="0.0203046" />
+                            <point x="1" y="0.959391" />
+                            <point x="0.0547264" y="0.913706" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -487,12 +490,12 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7994604832355614" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.50625">
                         <collision-poly>
-                            <point x="0.188" y="0.216" />
-                            <point x="0.768" y="0.164" />
-                            <point x="0.788" y="0.788" />
-                            <point x="0.196" y="0.752" />
+                            <point x="0.0243902" y="0.0625" />
+                            <point x="0.908537" y="0" />
+                            <point x="0.939024" y="0.95625" />
+                            <point x="0.0365854" y="0.9" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -502,12 +505,12 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9179567980609251" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.485" hotspotY="0.465909">
                         <collision-poly>
-                            <point x="0.2" y="0.212" />
-                            <point x="0.876" y="0.144" />
-                            <point x="0.868" y="0.82" />
-                            <point x="0.112" y="0.816" />
+                            <point x="0.11" y="0.0568182" />
+                            <point x="0.955" y="0" />
+                            <point x="0.945" y="0.920455" />
+                            <point x="0" y="0.914773" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -606,6 +609,20 @@
         <object-type name="Day" sid="2499992566723761">
             <plugin id="Text" />
         </object-type>
+        <object-type name="fuel" sid="2130057485197225">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="contained_fuel" sid="1943992450788042" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3411550806642789" speed="5">
+                    <frame duration="1" hotspotX="0.576159" hotspotY="0.447205" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fuel_left" sid="1158012087437885">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -656,6 +673,8 @@
         <file name="music.m4a" />
         <file name="music_reverse.m4a" />
         <file name="music_reverse.ogg" />
+        <file name="fuel_bonus.m4a" />
+        <file name="fuel_bonus.ogg" />
     </sounds-folder>
     <music-folder />
     <files-folder>
