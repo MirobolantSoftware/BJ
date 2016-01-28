@@ -162,18 +162,7 @@
                                             <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-21" name="Reset global variables" sid="4804788402881581" type="System" />
-                                        <action id="6" name="Stop" sid="8237287834663924" type="Audio">
-                                            <param id="0" name="Tag">&quot;music&quot;</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="8390313057118794" type="Audio">
-                                            <param id="0" name="Audio file">music_reverse</param>
-                                            <param id="2" name="Loop">1</param>
-                                            <param id="3" name="Volume">0</param>
-                                            <param id="1" name="Tag (optional)">&quot;music&quot;</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
                                 </event-block>
                                 <comment>GENERATING LEAVES AND TREES</comment>
                                 <event-block sid="9858512468154601">
@@ -350,8 +339,41 @@
                                 <action id="5" name="Set frame" sid="3533365171985441" type="door">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
+                                <action id="2" name="Stop" sid="1755913459560847" type="boss_buble" />
+                                <action id="-15" name="Set visible" sid="5146721095965525" type="boss_buble">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="5817260739301016">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="4256217789323562" type="System">
+                                            <param id="0" name="First value">distance(boss.X,boss.Y,bob.X,bob.Y)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">100</param>
+                                        </condition>
+                                        <condition disabled="1" id="2" name="Key is down" sid="9678285125756371" type="Keyboard">
+                                            <param id="0" name="Key">32 (Espace)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="8260830302943173" type="boss_buble">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="7705679678920503">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="1985186375941153" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="5" name="Set frame" sid="7176091505113425" type="boss_buble">
+                                                    <param id="0" name="Frame number">random(boss_buble.AnimationFrameCount)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                                 <event-block sid="9416860710143214">
                                     <conditions>
                                         <condition id="1" name="Is overlapping another object" sid="8059612582144222" type="door">
@@ -374,6 +396,12 @@
                                                 <action id="-10" name="Add to" sid="4866791361827205" type="System">
                                                     <param id="0" name="Variable">current_level</param>
                                                     <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="1682667281983464" type="Audio">
+                                                    <param id="0" name="Audio file">music_reverse</param>
+                                                    <param id="2" name="Loop">1</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
                                                 </action>
                                                 <action id="-2" name="Go to layout" sid="5360752409310413" type="System">
                                                     <param id="0" name="Layout">street</param>
@@ -1054,14 +1082,15 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-2" name="Go to layout" sid="8460479652673657" type="System">
-                                    <param id="0" name="Layout">menu</param>
-                                </action>
+                                <action id="-21" name="Reset global variables" sid="9004063403328282" type="System" />
                                 <action id="0" name="Play" sid="171621328266314" type="Audio">
                                     <param id="0" name="Audio file">Hit_Hurt</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">0</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="8460479652673657" type="System">
+                                    <param id="0" name="Layout">menu</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1121,5 +1150,9 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="2034511824821994">
+            <conditions />
+            <actions />
+        </event-block>
     </events>
 </c2eventsheet>

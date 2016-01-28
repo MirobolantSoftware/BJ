@@ -25,6 +25,7 @@
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -572,9 +573,21 @@
         </object-type>
         <object-type name="boss" sid="773401708114485">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="8040611778031843">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9604050769639512" speed="5">
-                    <frame duration="1" hotspotX="0.501229" hotspotY="0.465426" />
+                    <frame duration="1" hotspotX="0.501229" hotspotY="0.465426">
+                        <collision-poly>
+                            <point x="0.012285" y="0.672872" />
+                            <point x="0.982801" y="0.670213" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -622,6 +635,21 @@
         </object-type>
         <object-type name="fuel_left" sid="1158012087437885">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="boss_buble" sid="2820955892096816">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="8" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6669858537988064" speed="5">
+                    <frame duration="1" hotspotX="0.11" hotspotY="0.88" />
+                    <frame duration="1" hotspotX="0.11" hotspotY="0.88" />
+                    <frame duration="1" hotspotX="0.11" hotspotY="0.88" />
+                    <frame duration="1" hotspotX="0.11" hotspotY="0.88" />
+                    <frame duration="1" hotspotX="0.11" hotspotY="0.88" />
+                    <frame duration="1" hotspotX="0.11" hotspotY="0.88" />
+                    <frame duration="1" hotspotX="0.11" hotspotY="0.88" />
+                    <frame duration="1" hotspotX="0.11" hotspotY="0.88" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
