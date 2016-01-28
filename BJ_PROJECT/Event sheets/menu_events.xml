@@ -23,7 +23,11 @@
             <conditions>
                 <condition id="-2" name="On start of layout" sid="1078145891760276" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="6" name="Stop" sid="4501679418229574" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

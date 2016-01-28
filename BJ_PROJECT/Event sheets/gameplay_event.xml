@@ -13,11 +13,11 @@
         <variable constant="0" name="current_level" sid="20634626180249" static="0" type="number">0</variable>
         <variable constant="0" name="gathered_leaves" sid="901647731120211" static="0" type="number">0</variable>
         <variable constant="0" name="tree_max_leaves" sid="7990933118538347" static="0" type="number">10</variable>
-        <variable constant="0" name="player_initial_speed" sid="1436122149838553" static="0" type="number">100</variable>
         <variable constant="0" name="player_initial_strenght" sid="6934100579935003" static="0" type="number">200</variable>
+        <variable constant="0" name="player_initial_speed" sid="1436122149838553" static="0" type="number">200</variable>
+        <variable constant="0" name="player_initial_cone" sid="1955214890695693" static="0" type="number">100</variable>
         <variable constant="0" name="player_extra_speed" sid="9239303754659467" static="0" type="number">0</variable>
         <variable constant="0" name="player_extra_cone" sid="6051817210786957" static="0" type="number">0</variable>
-        <variable constant="0" name="player_initial_cone" sid="1955214890695693" static="0" type="number">100</variable>
         <variable constant="0" name="player_extra_strenght" sid="5156783865316722" static="0" type="number">0</variable>
         <comment>relative to missions</comment>
         <variable constant="0" name="meteo" sid="7728804994439365" static="0" type="number">0</variable>
@@ -75,9 +75,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="6" name="Stop" sid="3864042272746819" type="Audio">
-                                    <param id="0" name="Tag">&quot;music&quot;</param>
-                                </action>
                                 <action id="-9" name="Set value" sid="6412413459758073" type="System">
                                     <param id="0" name="Variable">meteo</param>
                                     <param id="1" name="Value">round(random(0,2))</param>
@@ -88,6 +85,9 @@
                                 </action>
                                 <action id="0" name="Set text" sid="1003408817631016" type="Day">
                                     <param id="0" name="Text">&quot;DAY : &quot;&amp;day</param>
+                                </action>
+                                <action id="6" name="Stop" sid="3864042272746819" type="Audio">
+                                    <param id="0" name="Tag">&quot;music&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -163,16 +163,16 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="6" name="Stop" sid="7602204231676122" type="Audio">
+                                        <action id="-21" name="Reset global variables" sid="4804788402881581" type="System" />
+                                        <action id="6" name="Stop" sid="8237287834663924" type="Audio">
                                             <param id="0" name="Tag">&quot;music&quot;</param>
                                         </action>
-                                        <action id="0" name="Play" sid="4392805029366987" type="Audio">
+                                        <action id="0" name="Play" sid="8390313057118794" type="Audio">
                                             <param id="0" name="Audio file">music_reverse</param>
                                             <param id="2" name="Loop">1</param>
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;music&quot;</param>
                                         </action>
-                                        <action id="-21" name="Reset global variables" sid="4804788402881581" type="System" />
                                     </actions>
                                 </event-block>
                                 <comment>GENERATING LEAVES AND TREES</comment>
@@ -886,7 +886,7 @@
                     <actions>
                         <action id="-9" name="Set value" sid="6468897663376608" type="System">
                             <param id="0" name="Variable">player_extra_speed</param>
-                            <param id="1" name="Value">player_extra_speed+20</param>
+                            <param id="1" name="Value">player_extra_speed+40</param>
                         </action>
                         <action id="-9" name="Destroy" sid="1842317801999197" type="speed_bonus" />
                         <action id="-9" name="Destroy" sid="1572961565055444" type="blow_force_bonus" />
@@ -914,7 +914,7 @@
                     <actions>
                         <action id="-9" name="Set value" sid="9035384118426773" type="System">
                             <param id="0" name="Variable">player_extra_cone</param>
-                            <param id="1" name="Value">player_extra_cone+20</param>
+                            <param id="1" name="Value">player_extra_cone+30</param>
                         </action>
                         <action id="-9" name="Destroy" sid="9744222212164453" type="speed_bonus" />
                         <action id="-9" name="Destroy" sid="3708183877279516" type="blow_force_bonus" />
@@ -939,7 +939,7 @@
                     <actions>
                         <action id="-9" name="Set value" sid="1758445066767603" type="System">
                             <param id="0" name="Variable">player_extra_strenght</param>
-                            <param id="1" name="Value">player_extra_strenght+20</param>
+                            <param id="1" name="Value">player_extra_strenght+30</param>
                         </action>
                         <action id="-9" name="Destroy" sid="8780109373022677" type="speed_bonus" />
                         <action id="-9" name="Destroy" sid="1269882710216981" type="blow_force_bonus" />
@@ -1062,36 +1062,6 @@
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">0</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="3261399489011892" title="DOORS">
-            <sub-events>
-                <event-block disabled="1" sid="8337920450623871">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="8200283680848046" type="door">
-                            <param id="0" name="Object">bob</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="3244011441207857" type="door">
-                            <param id="0" name="Frame number">1</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block disabled="1" sid="5129952125001691">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="7892240280396324" type="Keyboard">
-                                    <param id="0" name="Key">32 (Espace)</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-2" name="Go to layout" sid="8432502678991932" type="System">
-                                    <param id="0" name="Layout">street</param>
                                 </action>
                             </actions>
                         </event-block>
